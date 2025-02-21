@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './styles/globals.css';
 import { JSX } from 'react';
+import { UserProvider } from '../Hooks/UserContext';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>): JSX.Element {
     return (
         <html lang="en">
-            <body className={`${montserrat.variable} font-montserrat`}>{children}</body>
+            <body className={`${montserrat.variable} font-montserrat`}>
+                <UserProvider>{children}</UserProvider>
+            </body>
         </html>
     );
 }
