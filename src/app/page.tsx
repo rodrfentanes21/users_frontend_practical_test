@@ -3,10 +3,10 @@
 import { JSX } from 'react';
 import { useUsers } from '../Hooks/UserContext';
 import { Modal } from '../components/Modal';
-import { LoadingStatus } from '../components/LoadingStatus';
-import { ErrorState } from '../components/ErrorState';
-import { UsersList } from '../components/UsersList';
-import { UserDetails } from '../components/UserDetails';
+import { LoadingStatus } from '../components/Status/Loading/LoadingStatus';
+import { ErrorStatus } from '../components/Status/ErrorStatus';
+import { UsersList } from '../components/User/UsersList';
+import { UserDetails } from '../components/User/UserDetails';
 
 export default function Home(): JSX.Element {
     const { users, loading, error, selectedUser, closeUserModal } = useUsers();
@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
     }
 
     if (error !== null && error !== '') {
-        return <ErrorState message={error} />;
+        return <ErrorStatus message={error} />;
     }
 
     return (
