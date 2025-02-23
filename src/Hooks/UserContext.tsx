@@ -3,17 +3,9 @@ import { createContext, useContext, useEffect, useState, ReactNode } from 'react
 import type { JSX } from 'react';
 import { IUser } from '../types/user';
 import { fetchUsers } from '../services/userService';
+import { IUserContext } from './interfaces/IUserContext';
 
-interface UserContextType {
-    users: IUser[];
-    loading: boolean;
-    error: string | null;
-    selectedUser: IUser | null;
-    openUserModal: (user: IUser) => void;
-    closeUserModal: () => void;
-}
-
-const UserContext = createContext<UserContextType | undefined>(undefined);
+const UserContext = createContext<IUserContext | undefined>(undefined);
 
 export function UserProvider({ children }: { children: ReactNode }): JSX.Element {
     const [users, setUsers] = useState<IUser[]>([]);
@@ -61,7 +53,7 @@ export function UserProvider({ children }: { children: ReactNode }): JSX.Element
     );
 }
 
-export function useUsers(): UserContextType {
+export function useUsers(): IUserContext {
     const context = useContext(UserContext);
     if (context === undefined) {
         throw new Error('useUsers must be used within a UserProvider');
