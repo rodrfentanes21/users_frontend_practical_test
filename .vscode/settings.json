@@ -54,7 +54,6 @@
         "markdown"
     ],
     "typescript.tsdk": "node_modules/typescript/lib",
-    "editor.codeActionsOnSaveTimeout": 2000,
     "files.autoSave": "onFocusChange",
     "files.autoSaveDelay": 1000,
     "prettier.requireConfig": true,
