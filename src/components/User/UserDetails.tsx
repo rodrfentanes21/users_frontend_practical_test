@@ -1,5 +1,5 @@
+import { IUser } from '@/types/user';
 import { JSX } from 'react';
-import { IUser } from '../types/user';
 
 interface UserDetailsProps {
     user: IUser;
