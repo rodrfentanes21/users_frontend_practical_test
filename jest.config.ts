@@ -8,7 +8,22 @@ const config: Config = {
         '^@/(.*)$': '<rootDir>/src/$1',
     },
     transform: {
-        '^.+\\.(ts|tsx)$': 'babel-jest',
+        '^.+\\.(t|j)sx?$': [
+            '@swc/jest',
+            {
+                jsc: {
+                    parser: {
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                },
+            },
+        ],
     },
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
