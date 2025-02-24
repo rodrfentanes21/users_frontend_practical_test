@@ -1,12 +1,11 @@
 import { JSX } from 'react';
-import { IUser } from '../../types/user';
 import { UserCard } from './UserCard';
+import { SearchBar } from '../Search/SearchBar';
+import { useUsers } from '../../Hooks/UserContext';
 
-interface UsersListProps {
-    users: IUser[];
-}
+export function UsersList(): JSX.Element {
+    const { filteredUsers } = useUsers();
 
-export function UsersList({ users }: UsersListProps): JSX.Element {
     return (
         <main className="p-4">
             <header>
@@ -14,13 +13,18 @@ export function UsersList({ users }: UsersListProps): JSX.Element {
                     Users List
                 </h1>
             </header>
+            <SearchBar />
             <section
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
                 aria-label="Users grid"
             >
-                {users.map((user) => (
-                    <UserCard key={user.id} user={user} />
-                ))}
+                {filteredUsers.length > 0 ? (
+                    filteredUsers.map((user) => <UserCard key={user.id} user={user} />)
+                ) : (
+                    <div className="col-span-full text-center text-gray-600 dark:text-gray-400 py-8">
+                        No users found matching your search criteria
+                    </div>
+                )}
             </section>
         </main>
     );

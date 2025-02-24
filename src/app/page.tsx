@@ -9,7 +9,7 @@ import { UsersList } from '../components/User/UsersList';
 import { UserDetails } from '../components/User/UserDetails';
 
 export default function Home(): JSX.Element {
-    const { users, loading, error, selectedUser, closeUserModal } = useUsers();
+    const { loading, error, selectedUser, closeUserModal } = useUsers();
 
     if (loading) {
         return <LoadingStatus />;
@@ -21,7 +21,7 @@ export default function Home(): JSX.Element {
 
     return (
         <>
-            <UsersList users={users} />
+            <UsersList />
 
             <Modal
                 isOpen={selectedUser !== null}
