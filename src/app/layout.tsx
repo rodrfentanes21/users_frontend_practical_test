@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './styles/globals.css';
+import 'leaflet/dist/leaflet.css';
 import { JSX } from 'react';
 import { UserProvider } from '../Hooks/UserContext';
 

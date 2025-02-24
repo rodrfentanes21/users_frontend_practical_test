@@ -1,5 +1,11 @@
 import { IUser } from '@/types/user';
 import { JSX } from 'react';
+import dynamic from 'next/dynamic';
+
+const UserLocationMap = dynamic(
+    () => import('../Map/UserLocationMap').then((mod) => mod.UserLocationMap),
+    { ssr: false }
+);
 
 interface UserDetailsProps {
     user: IUser;
@@ -21,6 +27,13 @@ export function UserDetails({ user }: UserDetailsProps): JSX.Element {
                 <p className="dark:text-gray-300">
                     {user.address.city}, {user.address.zipcode}
                 </p>
+            </div>
+
+            <div>
+                <h3 className="font-semibold mb-2 text-indigo-700 dark:text-indigo-400">
+                    Location
+                </h3>
+                <UserLocationMap geo={user.address.geo} userName={user.name} />
             </div>
 
             <div>
