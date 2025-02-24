@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { IUser } from '../../types/user';
-import { useUsers } from '../../Hooks/UserContext';
+import { useUsers } from '../../hooks/UserContext';
 
 interface UserCardProps {
     user: IUser;

@@ -1,7 +1,7 @@
 import { JSX } from 'react';
 import { UserCard } from './UserCard';
 import { SearchBar } from '../Search/SearchBar';
-import { useUsers } from '../../Hooks/UserContext';
+import { useUsers } from '../../hooks/UserContext';
 
 export function UsersList(): JSX.Element {
     const { filteredUsers } = useUsers();

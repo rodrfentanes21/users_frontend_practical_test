@@ -3,7 +3,7 @@ import { Montserrat } from 'next/font/google';
 import './styles/globals.css';
 import 'leaflet/dist/leaflet.css';
 import { JSX } from 'react';
-import { UserProvider } from '../Hooks/UserContext';
+import { UserProvider } from '../hooks/UserContext';
 
 const montserrat = Montserrat({
     subsets: ['latin'],

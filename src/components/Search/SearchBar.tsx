@@ -1,5 +1,5 @@
 import { JSX, ChangeEvent } from 'react';
-import { useUsers } from '../../Hooks/UserContext';
+import { useUsers } from '../../hooks/UserContext';
 
 export function SearchBar(): JSX.Element {
     const { searchQuery, setSearchQuery } = useUsers();

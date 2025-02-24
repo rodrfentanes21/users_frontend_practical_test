@@ -1,7 +1,7 @@
 'use client';
 
 import { JSX } from 'react';
-import { useUsers } from '../Hooks/UserContext';
+import { useUsers } from '../hooks/UserContext';
 import { Modal } from '../components/Modal/Modal';
 import { LoadingStatus } from '../components/Status/Loading/LoadingStatus';
 import { ErrorStatus } from '../components/Status/ErrorStatus';
