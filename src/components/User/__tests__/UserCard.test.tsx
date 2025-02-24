@@ -5,7 +5,7 @@ import { mockUser } from '../../../test/utils';
 const mockOpenUserModal = jest.fn();
 
 jest.mock('../../../Hooks/UserContext', () => ({
-    useUsers: () => ({
+    useUsers: (): { openUserModal: jest.Mock } => ({
         openUserModal: mockOpenUserModal,
     }),
 }));
@@ -15,7 +15,7 @@ describe('UserCard', () => {
         jest.clearAllMocks();
     });
 
-    it('renders user information correctly', () => {
+    it('renders user information correctly', (): void => {
         render(<UserCard user={mockUser} />);
 
         expect(screen.getByText(mockUser.name)).toBeInTheDocument();

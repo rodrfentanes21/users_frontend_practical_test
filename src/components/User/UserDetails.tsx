@@ -15,7 +15,7 @@ export function UserDetails({ user }: UserDetailsProps): JSX.Element {
     return (
         <div className="space-y-4">
             <div>
-                <p className="text-gray-600 dark:text-gray-400">Username: @{user.username}</p>
+                <p className="text-gray-600 dark:text-gray-400">Username: {user.username}</p>
                 <p className="text-indigo-600 dark:text-indigo-400">{user.email}</p>
             </div>
 
@@ -56,7 +56,7 @@ export function UserDetails({ user }: UserDetailsProps): JSX.Element {
                 <h3 className="font-semibold mb-2 text-indigo-700 dark:text-indigo-400">Company</h3>
                 <p className="font-medium dark:text-gray-300">{user.company.name}</p>
                 <p className="text-gray-600 dark:text-gray-400 italic">
-                    "{user.company.catchPhrase}"
+                    &ldquo;{user.company.catchPhrase}&rdquo;
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-500">{user.company.bs}</p>
             </div>

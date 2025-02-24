@@ -22,7 +22,7 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps): JSX.Ele
             document.body.style.overflow = 'hidden';
         }
 
-        return () => {
+        return (): void => {
             document.removeEventListener('keydown', handleEscape);
             document.body.style.overflow = 'unset';
         };

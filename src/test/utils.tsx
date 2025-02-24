@@ -28,11 +28,14 @@ const mockUser = {
 
 const mockUsers = [mockUser];
 
-export const customRender = (ui: JSX.Element, { providerProps = {}, ...renderOptions } = {}) => {
+export const customRender = (
+    ui: JSX.Element,
+    { providerProps = {}, ...renderOptions } = {}
+): ReturnType<typeof render> => {
     return render(<UserProvider {...providerProps}>{ui}</UserProvider>, renderOptions);
 };
 
-export const createWrapper = (children: ReactNode) => {
+export const createWrapper = (children: ReactNode): JSX.Element => {
     return <UserProvider>{children}</UserProvider>;
 };
 
