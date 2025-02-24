@@ -4,7 +4,10 @@ A modern web application built with Next.js for managing and displaying user inf
 
 ## 🌐 Live Demo
 
-<img width="1512" alt="image" src="https://github.com/user-attachments/assets/e587f9e9-960f-415c-b4c0-6b283c647e15" />
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/815c151b-b5d4-4d82-b573-82e03f2579a4" />
+
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/b12989ff-af01-41c4-89ad-7ec685918d50" />
+
 
 The application is deployed on Vercel and can be accessed at: [Users Frontend App](https://users-frontend-practical-test.vercel.app/)
 
