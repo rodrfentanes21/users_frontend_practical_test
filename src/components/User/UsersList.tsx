@@ -7,13 +7,13 @@ export function UsersList(): JSX.Element {
     const { filteredUsers } = useUsers();
 
     return (
-        <main className="p-4">
-            <header>
+        <main className="container mx-auto px-4 py-6">
+            <header className="mb-8">
                 <h1 className="text-3xl text-center font-bold mb-6 bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent">
                     Users List
                 </h1>
+                <SearchBar />
             </header>
-            <SearchBar />
             <section
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
                 aria-label="Users grid"
