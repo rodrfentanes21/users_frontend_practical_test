@@ -9,7 +9,7 @@ interface UserCardProps {
 export function UserCard({ user }: UserCardProps): JSX.Element {
     const { openUserModal } = useUsers();
 
-    const handleKeyPress = (e: React.KeyboardEvent): void => {
+    const handleKeyDown = (e: React.KeyboardEvent): void => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             openUserModal(user);
@@ -19,7 +19,7 @@ export function UserCard({ user }: UserCardProps): JSX.Element {
     return (
         <article
             onClick={() => openUserModal(user)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyDown}
             className="group p-[1px] rounded-lg cursor-pointer bg-gradient-to-r from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 transition-all duration-300 hover:scale-[1.02] shadow-[0_0_15px_rgba(99,102,241,0.1)] hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] dark:shadow-[0_0_15px_rgba(99,102,241,0.05)] dark:hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]"
             role="button"
             tabIndex={0}
