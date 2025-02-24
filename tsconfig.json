@@ -15,11 +15,11 @@
         "incremental": true,
         "plugins": [
             {
-                "name": "next"
-            }
+                "name": "next",
+            },
         ],
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
         },
         "noImplicitAny": true,
         "noImplicitThis": true,
@@ -34,8 +34,8 @@
         "noUncheckedIndexedAccess": true,
         "noPropertyAccessFromIndexSignature": true,
         "exactOptionalPropertyTypes": true,
-        "noImplicitOverride": true
+        "noImplicitOverride": true,
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules"],
 }
