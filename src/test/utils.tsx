@@ -1,6 +1,6 @@
 import { JSX, ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import { UserProvider } from '../hooks/UserContext';
+import { UserProvider } from '../Hooks/UserContext';
 
 const mockUser = {
     id: 1,
